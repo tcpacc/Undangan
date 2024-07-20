@@ -45,7 +45,7 @@ section
     background-color: aqua;
 }
 
-p{
+.one>p{
     display: inline-block;
     font-family: 'Playwrite BE VLG';
     color: gold;

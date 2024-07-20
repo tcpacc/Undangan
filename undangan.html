@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Undangan</title>
+</head>
+<body>
+    <div class="container">
+        <section class="one">
+            <canvas id="canv" width="300" height="100"></canvas>
+            <div class="arch"></div>
+            <p class="big">Mario & Sonic</p>
+            <p class="bottomText">
+                29 . 2 . 2025
+            </p>
+            <!-- <p id="timer"></p> -->
+        </section>
+        <section class="two">
+            <p>test</p>
+        </section>
+        <section class="three"></section>
+    </div>
+<script>
+    window.onload = function()
+    {
+        let canvas = document.getElementById("canv");
+        let context = canvas.getContext("2d")
+
+        context.font = "20px 'Playwrite BE VLG'";
+        context.fillStyle = "gold";
+        context.textAlign = "center";
+
+        let angle = Math.PI * 0.6;
+        let radius = 100;
+
+        let string = "The Wedding Of";
+
+        context.translate(140,160)
+        context.rotate(-1 * angle /2);
+
+        for (let i = 0; i < string.length; i++) 
+        {
+        context.rotate(angle / string.length);
+        context.save();
+        context.translate(0, -1 * radius);
+        context.fillText(string[i], 0, 0);
+        context.restore(); 
+        }
+    }
+    
+    // var countDownDate = new Date("Mar 1, 2025 04:20:00").getTime();
+    
+    // var x = setInterval(function() {
+    
+    //     var now = new Date().getTime();
+    
+    //     var distance = countDownDate - now;
+
+    //     var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7))
+    //     var days = Math.floor(distance % weeks / (1000 * 60 * 60 * 24));
+    //     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    //     document.getElementById("timer").innerText = weeks+ "w" +  days + "d " + hours + "h "
+    //     + minutes + "m " + seconds + "s ";
+    
+    //     if (distance < 0) {
+    //     clearInterval(x);
+    //     document.getElementById("timer").innerHTML = "EXPIRED";
+    //     }
+    // }, 1000);
+    </script>
+</body>
+</html>

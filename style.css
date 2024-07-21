@@ -40,12 +40,41 @@ section
     z-index: 1;
 }
 
+.portfolioone
+{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 50%;
+    animation: slideRight 2s backwards;
+}
+
+
+#picture
+{
+    height: 36vh;
+    width: 48vw;
+    margin-top: 2vh;
+}
+
+.bigtwo
+{
+    color: brown;
+    font-size: 25px;
+}
+
+.content 
+{
+    color: brown;
+    font-size: 10px;
+}
+
 .three
 {
     background-color: aqua;
 }
 
-.one>p{
+p{
     display: inline-block;
     font-family: 'Playwrite BE VLG';
     color: gold;
@@ -61,7 +90,7 @@ section
     animation: slideDown 2s backwards;
 }
 
-.big
+.bigone
 {
     font-size: 30px;
     margin-top: 5%;
@@ -90,7 +119,10 @@ section
     height: 300px;
     background-color: black;
     border-radius: 100%/160% 160% 20% 20%;
-    animation: fadeIn 2s 1s backwards;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: both;
 }
 
 @keyframes fadeIn {
@@ -121,5 +153,16 @@ section
     to{
         opacity: 1;
         transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes slideRight {
+    from{
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
     }
 }

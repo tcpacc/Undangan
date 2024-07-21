@@ -12,18 +12,92 @@
         <section class="one">
             <canvas id="canv" width="300" height="100"></canvas>
             <div class="arch"></div>
-            <p class="big">Mario & Sonic</p>
+            <p class="bigone">Mario & Sonic</p>
             <p class="bottomText">
                 29 . 2 . 2025
             </p>
             <!-- <p id="timer"></p> -->
         </section>
         <section class="two">
-            <p>testsomething</p>
+            <div class="portfolioone">
+                <!-- <img id = "frame" src="garden-roses-cartoon-picture-frames-painting-film-frame-gold-picture-frame-rectangle-interior-design-png-clipart-removebg-preview.png" alt=""> -->
+                <img id="picture" src="Screenshot 2024-07-21 123109.png" alt="">
+                <div id="info">
+                    <p class="bigtwo">Mario Mario</p>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nulla</p>
+                </div>
+            </div>
+            <div class="portfoliotwo"></div>
         </section>
         <section class="three"></section>
     </div>
 <script>
+    const container = document.querySelector(".container");
+
+    const containerone = document.querySelector("section.one");
+    const containertwo = document.querySelector("section.two");
+    const containerthree = document.querySelector("section.three");
+
+    let containeronetop =containerone.getBoundingClientRect().top;
+    let containertwotop =containertwo.getBoundingClientRect().top;
+    let containerthreetop =containerthree.getBoundingClientRect().top;
+
+    for(let i = 0; i < containerone.children.length; i++)
+    {
+        containerone.children[i].style.animationName = "";
+    }
+    for(let i = 0; i < containertwo.children.length; i++)
+    {
+        containertwo.children[i].style.animationName = "none";
+        containertwo.children[i].style.display = "none";
+    }
+
+    container.addEventListener('scroll', () => {
+        containeronetop =containerone.getBoundingClientRect().top;
+        containertwotop =containertwo.getBoundingClientRect().top;
+        containerthreetop =containerthree.getBoundingClientRect().top;
+
+        if(containeronetop == 0)
+        {
+            for(let i = 0; i < containerone.children.length; i++)
+            {
+                containerone.children[i].style.animationName = "";
+                containerone.children[i].style.display = "";
+            }
+            for(let i = 0; i < containertwo.children.length; i++)
+            {
+                containertwo.children[i].style.animationName = "none";
+                containertwo.children[i].style.display = "none";
+            }
+        }
+        else if(containertwotop == 0)
+        {
+            for(let i = 0; i < containerone.children.length; i++)
+            {
+                containerone.children[i].style.animationName = "none";
+                containerone.children[i].style.display = "none";
+            }
+            for(let i = 0; i < containertwo.children.length; i++)
+            {
+                containertwo.children[i].style.animationName = "";
+                containertwo.children[i].style.display = "";
+            }
+        }
+        else if(containerthreetop == 0)
+        {
+            for(let i = 0; i < containerone.children.length; i++)
+            {
+                containerone.children[i].style.animationName = "none";
+                containerone.children[i].style.animationName = "none";
+            }
+            for(let i = 0; i < containertwo.children.length; i++)
+            {
+                containertwo.children[i].style.animationName = "none";
+                containertwo.children[i].style.display = "none";
+            }
+        }
+    })
+
     window.onload = function()
     {
         let canvas = document.getElementById("canv");

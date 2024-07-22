@@ -37,24 +37,56 @@ section
 {
     position: relative;
     background: linear-gradient(96deg, goldenrod 50%, darkgoldenrod calc(50% + 1px));
-    z-index: 1;
 }
 
 .portfolioone
 {
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    width: 50%;
-    animation: slideRight 2s backwards;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10%;
+    width: 100%;
 }
 
+.portfolioone > #picture
+{
+    animation: slideRight 3s backwards;
+}
+
+.portfolioone > #info
+{
+    animation: slideLeft 2s 1s backwards;
+}
+
+.portfoliotwo
+{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.portfoliotwo > #picture
+{
+    animation: slideLeft 3s backwards;
+}
+
+.portfoliotwo > #info
+{
+    animation: slideRight 2s 1s backwards;
+
+}
 
 #picture
 {
     height: 36vh;
     width: 48vw;
-    margin-top: 2vh;
+    margin-top: 10%;
+}
+
+#info
+{
+    flex: 1;
+    align-self: center;
 }
 
 .bigtwo
@@ -66,7 +98,7 @@ section
 .content 
 {
     color: brown;
-    font-size: 10px;
+    font-size: 1rem;
 }
 
 .three
@@ -159,6 +191,17 @@ p{
 @keyframes slideRight {
     from{
         transform: translateX(-300px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from{
+        transform: translateX(300px);
         opacity: 0;
     }
     to{

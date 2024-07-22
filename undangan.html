@@ -16,18 +16,22 @@
             <p class="bottomText">
                 29 . 2 . 2025
             </p>
-            <!-- <p id="timer"></p> -->
         </section>
         <section class="two">
             <div class="portfolioone">
-                <!-- <img id = "frame" src="garden-roses-cartoon-picture-frames-painting-film-frame-gold-picture-frame-rectangle-interior-design-png-clipart-removebg-preview.png" alt=""> -->
                 <img id="picture" src="Screenshot 2024-07-21 123109.png" alt="">
                 <div id="info">
                     <p class="bigtwo">Mario Mario</p>
                     <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nulla</p>
                 </div>
             </div>
-            <div class="portfoliotwo"></div>
+            <div class="portfoliotwo">
+                <img id="picture" src="Screenshot 2024-07-22 182650.png" alt="">
+                <div id="info">
+                    <p class="bigtwo">Olgivie M. W. Hedgehog</p>
+                    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nulla</p>
+                </div>
+            </div>
         </section>
         <section class="three"></section>
     </div>
@@ -41,6 +45,8 @@
     let containeronetop =containerone.getBoundingClientRect().top;
     let containertwotop =containertwo.getBoundingClientRect().top;
     let containerthreetop =containerthree.getBoundingClientRect().top;
+
+    const triggerBottom = window.innerHeight;
 
     for(let i = 0; i < containerone.children.length; i++)
     {
@@ -57,7 +63,7 @@
         containertwotop =containertwo.getBoundingClientRect().top;
         containerthreetop =containerthree.getBoundingClientRect().top;
 
-        if(containeronetop == 0)
+        if(containeronetop >= 0 && containeronetop > -innerHeight)
         {
             for(let i = 0; i < containerone.children.length; i++)
             {
@@ -70,7 +76,7 @@
                 containertwo.children[i].style.display = "none";
             }
         }
-        else if(containertwotop == 0)
+        else if(containertwotop == 0 && containertwotop > -innerHeight)
         {
             for(let i = 0; i < containerone.children.length; i++)
             {
@@ -83,7 +89,7 @@
                 containertwo.children[i].style.display = "";
             }
         }
-        else if(containerthreetop == 0)
+        else if(containerthreetop == 0 && containerthreetop > -innerHeight)
         {
             for(let i = 0; i < containerone.children.length; i++)
             {

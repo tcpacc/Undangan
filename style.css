@@ -24,10 +24,10 @@ section
 
 .one
 {
-    background-image: url("20230616102345.jpg");
+    background-image: url("beautiful-pink-rose-flower-frame-with-watercolor-for-wedding-birthday-card-background-invitation-wallpaper-sticker-decoration-etc-vector.jpg");
     background-repeat: no-repeat;
-    background-size: 125%;
-    background-position:-15vw 0;
+    background-size: 100% 100%;
+    /* background-position:-15vw 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,8 +35,7 @@ section
 
 .two
 {
-    position: relative;
-    background: linear-gradient(96deg, goldenrod 50%, darkgoldenrod calc(50% + 1px));
+    background: linear-gradient(96deg, #fff 50%, #D0D5CE calc(50% + 1px));
 }
 
 .portfolioone
@@ -50,12 +49,12 @@ section
 
 .portfolioone > #picture
 {
-    animation: slideRight 3s backwards;
+    animation: fadeeRight 3s backwards;
 }
 
 .portfolioone > #info
 {
-    animation: slideLeft 2s 1s backwards;
+    animation: fadeeLeft 2s 1s backwards;
 }
 
 .portfoliotwo
@@ -67,12 +66,12 @@ section
 
 .portfoliotwo > #picture
 {
-    animation: slideLeft 3s backwards;
+    animation: fadeeLeft 3s backwards;
 }
 
 .portfoliotwo > #info
 {
-    animation: slideRight 2s 1s backwards;
+    animation: fadeeRight 2s 1s backwards;
 
 }
 
@@ -91,25 +90,52 @@ section
 
 .bigtwo
 {
-    color: brown;
     font-size: 25px;
 }
 
 .content 
 {
-    color: brown;
     font-size: 1rem;
 }
 
 .three
 {
-    background-color: aqua;
+    position: relative;
+    background: linear-gradient(-96deg, #D0D5CE 50%, #fff calc(50% + 1px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame
+{
+    position: absolute;
+    background-image: url(images-removebg-preview.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 80vw;
+    height:90vh;
+    animation: slideUp 2s backwards;
+}
+
+.box
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9c938a;
+    width: 72vw;
+    height: 85vh;
+    border-radius: 17.5vw;
+    animation: slideUp 2s backwards;
 }
 
 p{
     display: inline-block;
     font-family: 'Playwrite BE VLG';
-    color: gold;
+    color: #fac585;
+    /* text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+             1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black */
 }
 
 .top
@@ -119,14 +145,14 @@ p{
 
 #canv
 {
-    animation: slideDown 2s backwards;
+    animation: fadeeDown 2s backwards;
 }
 
 .bigone
 {
     font-size: 30px;
     margin-top: 5%;
-    animation: slideUp 2s 1s backwards;
+    animation: fadeeUp 2s 1s backwards;
 }
 
 .bottomText
@@ -134,7 +160,7 @@ p{
     font-family:'Playfair Display' ;
     font-style: italic;
     font-size: 30px;
-    animation: slideUp 2s 1s backwards;
+    animation: fadeeUp 2s 1s backwards;
 }
 
 #timer
@@ -166,7 +192,7 @@ p{
     }
 }
 
-@keyframes slideUp {
+@keyframes fadeeUp {
     from{
         opacity: 0;
         transform: translateY(100px) scale(0);
@@ -177,7 +203,7 @@ p{
     }
 }
 
-@keyframes slideDown {
+@keyframes fadeeDown {
     from{
         opacity: 0;
         transform: translateY(-100px) scale(0);
@@ -188,7 +214,7 @@ p{
     }
 }
 
-@keyframes slideRight {
+@keyframes fadeeRight {
     from{
         transform: translateX(-300px);
         opacity: 0;
@@ -199,9 +225,21 @@ p{
     }
 }
 
-@keyframes slideLeft {
+@keyframes fadeeLeft {
     from{
         transform: translateX(300px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideUp {
+    from{
+        transform: translateY(300px);
         opacity: 0;
     }
     to{

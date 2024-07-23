@@ -19,21 +19,28 @@
         </section>
         <section class="two">
             <div class="portfolioone">
-                <img id="picture" src="Screenshot 2024-07-21 123109.png" alt="">
+                <img id="picture" src="Screenshot_2024-07-21_123109-removebg-preview.png" alt="">
                 <div id="info">
                     <p class="bigtwo">Mario Mario</p>
                     <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nulla</p>
                 </div>
             </div>
             <div class="portfoliotwo">
-                <img id="picture" src="Screenshot 2024-07-22 182650.png" alt="">
+                <img id="picture" src="Screenshot_2024-07-22_182650-removebg-preview.png" alt="">
                 <div id="info">
                     <p class="bigtwo">Olgivie M. W. Hedgehog</p>
                     <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem nulla</p>
                 </div>
             </div>
         </section>
-        <section class="three"></section>
+        <section class="three">
+            <div class="frame">
+                
+            </div>
+            <div class="box">
+                <p>hl</p>
+            </div>
+        </section>
     </div>
 <script>
     const container = document.querySelector(".container");
@@ -57,6 +64,11 @@
         containertwo.children[i].style.animationName = "none";
         containertwo.children[i].style.display = "none";
     }
+    for(let i = 0; i < containerthree.children.length; i++)
+    {
+        containerthree.children[i].style.animationName = "none";
+        containerthree.children[i].style.display = "none";
+    }
 
     container.addEventListener('scroll', () => {
         containeronetop =containerone.getBoundingClientRect().top;
@@ -75,6 +87,11 @@
                 containertwo.children[i].style.animationName = "none";
                 containertwo.children[i].style.display = "none";
             }
+            for(let i = 0; i < containerthree.children.length; i++)
+            {
+                containerthree.children[i].style.animationName = "none";
+                containerthree.children[i].style.display = "none";
+            }
         }
         else if(containertwotop == 0 && containertwotop > -innerHeight)
         {
@@ -87,6 +104,11 @@
             {
                 containertwo.children[i].style.animationName = "";
                 containertwo.children[i].style.display = "";
+            }
+            for(let i = 0; i < containerthree.children.length; i++)
+            {
+                containerthree.children[i].style.animationName = "none";
+                containerthree.children[i].style.display = "none";
             }
         }
         else if(containerthreetop == 0 && containerthreetop > -innerHeight)
@@ -101,6 +123,11 @@
                 containertwo.children[i].style.animationName = "none";
                 containertwo.children[i].style.display = "none";
             }
+            for(let i = 0; i < containerthree.children.length; i++)
+            {
+                containerthree.children[i].style.animationName = "";
+                containerthree.children[i].style.display = "";
+            }
         }
     })
 
@@ -110,7 +137,7 @@
         let context = canvas.getContext("2d")
 
         context.font = "20px 'Playwrite BE VLG'";
-        context.fillStyle = "gold";
+        context.fillStyle = "#fac585";
         context.textAlign = "center";
 
         let angle = Math.PI * 0.6;

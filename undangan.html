@@ -8,6 +8,10 @@
     <title>Undangan</title>
 </head>
 <body>
+    <div class="togglebox">
+        <input type="checkbox" id="toggle">
+        <label for="toggle"></label>
+    </div>
     <div class="container">
         <section class="one">
             <canvas id="canv" width="300" height="100"></canvas>
@@ -34,11 +38,18 @@
             </div>
         </section>
         <section class="three">
-            <div class="frame">
-                
-            </div>
+            <div class="frame"></div>
             <div class="box">
-                <p>hl</p>
+                <p class="bigthree">Reception</p>
+                <span class="line"></span>
+                <p class="date">29 febuary 2025</p>
+                <p class="date">09:00 AM - 04:00PM</p>
+                <p class="location">Grazhdanskiy Prospekt, 41Б,</p>
+                <p class="location"> St Petersburg, Russia,</p>
+                <p class="location"> 195257</p>
+                <button type="button" class="googlelocation" onclick="location.href =`https://www.google.com/maps/place/Panda-Express/@59.970986,30.4466142,11.54z/data=!4m6!3m5!1s0x4696330b6591b4eb:0x4a6ebf43df1629fc!8m2!3d60.012322!4d30.398365!16s%2Fg%2F11c1qyy6mz?entry=ttu`">See Location</button>
+                <p class="date">time left:</p>
+                <p id="timer"></p>
             </div>
         </section>
     </div>
@@ -158,28 +169,28 @@
         }
     }
     
-    // var countDownDate = new Date("Mar 1, 2025 04:20:00").getTime();
+    var countDownDate = new Date("Mar 1, 2025 04:20:00").getTime();
     
-    // var x = setInterval(function() {
+    var x = setInterval(function() {
     
-    //     var now = new Date().getTime();
+        var now = new Date().getTime();
     
-    //     var distance = countDownDate - now;
+        var distance = countDownDate - now;
 
-    //     var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7))
-    //     var days = Math.floor(distance % weeks / (1000 * 60 * 60 * 24));
-    //     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    //     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    //     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7))
+        var days = Math.floor(distance % weeks / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    //     document.getElementById("timer").innerText = weeks+ "w" +  days + "d " + hours + "h "
-    //     + minutes + "m " + seconds + "s ";
+        document.getElementById("timer").innerText = weeks+ "w :" +  days + "d :" + hours + "h :"
+        + minutes + "m :" + seconds + "s ";
     
-    //     if (distance < 0) {
-    //     clearInterval(x);
-    //     document.getElementById("timer").innerHTML = "EXPIRED";
-    //     }
-    // }, 1000);
+        if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+    }, 1000);
     </script>
 </body>
 </html>

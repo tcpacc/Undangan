@@ -9,11 +9,72 @@ html{
     box-sizing: border-box;
 }
 
+body{
+    position: relative;
+}
+
 .container
 {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
+}
+
+.togglebox
+{
+    position: absolute;
+    width: 20%;
+    height: 5vh;
+    right: 0px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label
+{
+    position: relative;
+    background-color: black;
+    display: block;
+    width: 90%;
+    height: 90%;
+    border-radius: 10vw;
+    box-shadow: inset 0px 1px 3px black, inset 0px -1px 3px white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label:after
+{
+    content: "";
+    width: 40%;
+    height: 90%;
+    background-color: white;
+    border-radius: 90%;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    transition: 0.3s;
+}
+
+#toggle
+{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#toggle:checked + label
+{
+    background-color: white;
+}
+
+#toggle:checked + label:after
+{
+    left: 90%;
+    transform: translateX(-100%);
+    background-color: black;
 }
 
 section
@@ -27,7 +88,6 @@ section
     background-image: url("beautiful-pink-rose-flower-frame-with-watercolor-for-wedding-birthday-card-background-invitation-wallpaper-sticker-decoration-etc-vector.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    /* background-position:-15vw 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,13 +181,49 @@ section
 .box
 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #9c938a;
     width: 72vw;
     height: 85vh;
     border-radius: 17.5vw;
     animation: slideUp 2s backwards;
+}
+
+.bigthree
+{
+    margin-top: 10%;
+    font-size: 2rem;
+}
+
+.line
+{
+    background-color:#fac585 ;
+    width: 45vw;
+    height: 1px;
+}
+
+.date
+{
+    margin-top: 2.5%;
+    margin-bottom: 5%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.location
+{
+    font-family: 'Courier New', Courier, monospace;
+    align-self: center;
+}
+
+.googlelocation
+{
+    color: #fac585;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 30px;
+    width: 35%;
+    height: 5%;
 }
 
 p{
@@ -138,13 +234,9 @@ p{
              1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black */
 }
 
-.top
-{
-    margin-top: 10%;
-}
-
 #canv
 {
+    margin-top: 25%;
     animation: fadeeDown 2s backwards;
 }
 

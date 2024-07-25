@@ -54,20 +54,33 @@
         </section>
     </div>
 <script>
+    function setCookie(name,value,expiredays)
+    {
+        const date = new Date();
+        date.setTime(date.getTime() + (expiredays *24 *60 *60 *1000))
+        let expires = "expires="+ date.toUTCString();
+        document.cookie = `${name}=${value}; ${expires}`;
+    }
+
+    function getCookie(name)
+    {
+        const cDecoded = decodeURIComponent(document.cookie);
+        let cArray = cDecoded.split("=")
+        return cArray[1];
+    }
+
     let toggle = document.getElementById("toggle");
     function validate()
     {
         if(toggle.checked)
         {
-            localStorage.setItem("darkMode", true);
-            console.log(localStorage.getItem("darkMode"));
+            setCookie("darkMode","true",365);
             document.querySelector(".one").classList.add("dark");
             document.querySelector(".two").classList.add("dark");
             document.querySelector(".three").classList.add("dark");
         }
         else{
-            localStorage.setItem("darkMode", false);
-            console.log(localStorage.getItem("darkMode"));
+            setCookie("darkMode", "false",365);
             document.querySelector(".one").classList.remove("dark");
             document.querySelector(".two").classList.remove("dark");
             document.querySelector(".three").classList.remove("dark");
@@ -166,14 +179,14 @@
 
     window.onload = function()
     {
-        if(localStorage.getItem("darkMode") == "true")
+        if(getCookie("darkMode") == "true")
         {
             document.querySelector(".one").classList.add("dark");
             document.querySelector(".two").classList.add("dark");
             document.querySelector(".three").classList.add("dark");
             document.querySelector("#toggle").checked=true;
         }
-        else if(localStorage.getItem("darkMode") == "false")
+        else if(getCookie("darkMode") == "false")
         {
             document.querySelector(".one").classList.remove("dark");
             document.querySelector(".two").classList.remove("dark");

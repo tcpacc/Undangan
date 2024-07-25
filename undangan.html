@@ -54,6 +54,28 @@
         </section>
     </div>
 <script>
+    let toggle = document.getElementById("toggle");
+    function validate()
+    {
+        if(toggle.checked)
+        {
+            localStorage.setItem("darkMode", true);
+            console.log(localStorage.getItem("darkMode"));
+            document.querySelector(".one").classList.add("dark");
+            document.querySelector(".two").classList.add("dark");
+            document.querySelector(".three").classList.add("dark");
+        }
+        else{
+            localStorage.setItem("darkMode", false);
+            console.log(localStorage.getItem("darkMode"));
+            document.querySelector(".one").classList.remove("dark");
+            document.querySelector(".two").classList.remove("dark");
+            document.querySelector(".three").classList.remove("dark");
+        }
+    }
+
+    toggle.addEventListener("click", validate)
+
     const container = document.querySelector(".container");
 
     const containerone = document.querySelector("section.one");
@@ -144,6 +166,20 @@
 
     window.onload = function()
     {
+        if(localStorage.getItem("darkMode") == "true")
+        {
+            document.querySelector(".one").classList.add("dark");
+            document.querySelector(".two").classList.add("dark");
+            document.querySelector(".three").classList.add("dark");
+            document.querySelector("#toggle").checked=true;
+        }
+        else if(localStorage.getItem("darkMode") == "false")
+        {
+            document.querySelector(".one").classList.remove("dark");
+            document.querySelector(".two").classList.remove("dark");
+            document.querySelector(".three").classList.remove("dark");
+            document.querySelector("#toggle").checked=false;
+        }
         let canvas = document.getElementById("canv");
         let context = canvas.getContext("2d")
 

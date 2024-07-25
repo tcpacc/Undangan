@@ -93,9 +93,20 @@ section
     align-items: center;
 }
 
+.one.dark
+{
+    background-image: url("download.jpg");
+}
+
+
 .two
 {
     background: linear-gradient(96deg, #fff 50%, #D0D5CE calc(50% + 1px));
+}
+
+.two.dark
+{
+    background: linear-gradient(96deg, rgb(3, 3, 44) 50%, black calc(50% + 1px));
 }
 
 .portfolioone
@@ -165,6 +176,11 @@ section
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.three.dark
+{
+    background: linear-gradient(-96deg,  black 50%, rgb(3, 3, 44) calc(50% + 1px));
 }
 
 .frame
